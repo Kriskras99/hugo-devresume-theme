@@ -232,8 +232,67 @@ a.resume-link {
     }
 }
 
+.languages {
+	border-top: 1px solid rgba(0,0,0,.08);
+	position: relative;
+	overflow: visible;
 
+	padding: 1rem;
+	margin: -1rem;
+  
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+  
+		li {
+			white-space: nowrap;
+			cursor: pointer;
 
+			img {
+				filter: invert(34%) sepia(0%) saturate(1696%) hue-rotate(200deg) brightness(95%) contrast(82%);
+			}
+		}
+	}
+  
+	&:hover,
+	&:focus,
+	&:focus-within {
+	  	.languages-list {
+			display: block;
+	  	}
+	}
+  
+	.languages-list {
+		display: none;
+  
+		position: absolute;
+		bottom: -100%;
+		left: 0;
+		padding: .5rem 0;
+  
+		background: #fff;
+		box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
+  
+		li img {
+			opacity: 0.25;
+		}
+  
+		li.active img,
+		li:hover img {
+			opacity: 1;
+		}
+  
+		a {
+			color: inherit;
+			padding: 0.5rem 1rem;
+		}
+	}
+}
+
+.language-spacer {
+	
+}
 
 
 
