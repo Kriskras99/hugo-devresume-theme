@@ -1,18 +1,18 @@
 - id: awards
-  translation: Awards
+  translation: Certificaten
 - id: education
-  translation: Education
+  translation: Opleidingen
 - id: experiences
-  translation: Work Experience
+  translation: Werkervaring
 - id: information
   translation: Information
 - id: interests
-  translation: Interests
+  translation: Hobbies
 - id: languages
-  translation: Languages
+  translation: Talen
 - id: projects
-  translation: Projects
+  translation: Projecten
 - id: skills
   translation: Skills
 - id: personality
-  translation: Personality
+  translation: Persoonlijkheid

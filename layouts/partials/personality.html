@@ -1,0 +1,49 @@
+
+                            <section class="skills-section py-3">
+
+                                <h3 class="text-uppercase resume-section-heading mb-4">{{ i18n "personality" }}</h3>
+                                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+                                <div>
+                                    <canvas id="can" width="120" height="120" />
+                                    <script type="text/javascript">
+                                    data = {
+                                        datasets: [{
+                                            label: "DISC",
+                                            data: [
+                                                {{ .Site.Params.personality.dominance }},
+                                                {{ .Site.Params.personality.influence }},
+                                                {{ .Site.Params.personality.steadiness }},
+                                                {{ .Site.Params.personality.compliance }},
+                                            ],
+                                            backgroundColor: ["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)", "rgb(128,100,161)"]
+                                        }],
+
+                                        // These labels appear in the legend and in the tooltips when hovering different arcs
+                                        labels: [
+                                            'Dominance',
+                                            'Influence',
+                                            'Steadiness',
+                                            'Compliance'
+                                        ]
+                                    };
+
+                                    var canvas = document.getElementById("can");
+                                    var ctx = canvas.getContext("2d");
+                                    var myPieChart = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: data,
+                                        options : {
+                                            legend: {
+                                                display: true,
+                                                position: "bottom",
+                                                align: "start"
+                                            }
+                                        }
+                                    });
+                                    </script>
+                                </div>
+                                <ul class="list-unstyled resume-interests-list mb-0">
+                                    <li class="mb-2">{{ with .Site.Params.personality.details }}{{ . | markdownify }}{{ end }}</li>
+                                    <li class="mb-2">{{ with .Site.Params.personality.details2 }}{{ . | markdownify }}{{ end }}</li>
+                                </ul>
+                            </section><!--//skills-section-->
