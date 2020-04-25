@@ -19,7 +19,18 @@ googleAnalytics = "UA-XXXXXXX-Y"
     primaryColor = "#54B689"
     textPrimaryColor = "#292929"
 
-
+    [params.matomo]
+        enable = true
+        siteId = 1
+        url = "analytics.example.com"
+        enableJs = true
+        enableImg = true
+        [[params.matomo.list]]
+        option = "disableCookies"
+        [[params.matomo.list]]
+        option = "trackPageView"
+        [[params.matomo.list]]
+        option = "enableLinkTracking"
 
 
     [params.profile]
