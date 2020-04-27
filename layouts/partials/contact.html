@@ -8,16 +8,15 @@
                         <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
                             <ul class="list-unstyled mb-0">
                                 {{ range .Site.Params.contact.list }}
-                                <li class="mb-2"><i class="{{ .icon }} fa-fw fa-lg mr-2"></i><a class="resume-link" href="{{ .url | safeURL }}">{{ .text }}</a></li>
+                                <li class="mb-2"><img src="{{ .icon }}" class="mr-2 svg"></img><a class="resume-link" href="{{ .url | safeURL }}">{{ .text }}</a></li>
                                 {{ end }}
-                                <li class="mb-2"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>{{ .Site.Params.contact.location }}</li>
+                                <li class="mb-2"><img src="/assets/svg/map-marked-alt.svg" class="mr-2 svg"></i>{{ .Site.Params.contact.location }}</li>
                                 <li class="mb-2 language-spacer"><br/></li>
                                 <li class="mb-2">
                                     <div class="languages" tabindex="0" aria-haspopup="true">
                                         <ul>
                                           <li class="flex align-center">
-                                            <!--<i class="fas fa-language fa-fw fa-lg mr-2"></i>-->
-                                            <img src="{{ "translate.svg" | relURL }}" class="book-icon" alt="Languages" />
+                                            <img src="{{ "/assets/svg/translate.svg" }}" class="book-icon svg" alt="Languages" />
                                             {{ $.Site.Language.LanguageName }}
                                           </li> 
                                         </ul>
@@ -26,8 +25,7 @@
                                           {{ range .Site.Languages }}{{ with index $translations .Lang }}
                                           <li class="{{ if (eq $.Site.Language .Language) }}active{{ end }}">
                                             <a href="{{ .Permalink }}" class="flex align-center">
-                                                <!--<i class="fas fa-language fa-fw fa-lg mr-2"></i>-->
-                                                <img src="{{ "translate.svg" | relURL }}" class="fa-fw fa-lg mr-2" alt="Languages" />
+                                                <img src="{{ "/assets/svg/translate.svg" }}" class="mr-2 svg" alt="Languages" />
                                               {{ .Language.LanguageName }}
                                             </a>
                                           </li>
