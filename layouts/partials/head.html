@@ -11,8 +11,8 @@
     <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- Google Fonts -->
-    <link rel="preload" href="/assets/fonts/roboto/roboto.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/fonts/roboto/roboto.css"></noscript>
+    <link rel="preload" href="/assets/fonts/roboto/roboto.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/fonts/roboto/roboto.min.css"></noscript>
     <!-- Theme SCSS -->
     {{ $style := resources.Get "scss/devresume.scss" | resources.ExecuteAsTemplate "scss/devresume.scss" . | toCSS (dict "targetPath" "assets/css/devresume.css") | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
@@ -27,15 +27,15 @@
         {{ end }}
         (function() {
         var u="{{ .Site.Params.matomo.url }}";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setTrackerUrl', u+'{{ .Site.Params.matomo.scriptName }}.php']);
         _paq.push(['setSiteId', '{{ .Site.Params.matomo.siteId }}']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'{{ .Site.Params.matomo.scriptName }}.js'; s.parentNode.insertBefore(g,s);
         })();
     </script>
     {{ end }}
     {{ if .Site.Params.matomo.enableImg }}
-    <p><img src="{{ .Site.Params.matomo.url }}matomo.php?idsite={{ .Site.Params.matomo.siteId }}&amp;rec=1" style="border:0;" alt="" /></p>
+    <p><img src="{{ .Site.Params.matomo.url }}{{ .Site.Params.matomo.scriptName }}.php?idsite={{ .Site.Params.matomo.siteId }}&amp;rec=1" style="border:0;" alt="" /></p>
     {{ end }}
     {{ end }}
     <!-- End Matomo Code -->
