@@ -10,17 +10,17 @@
                                         {{ range .items }}
                                         <li class="mb-2" style="clear:both">
                                             <span style="float:left">{{ .name }}</span>
-                                            <span style="float:right">
-                                                {{ if eq .level "novice" }}
-                                                <img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star.svg"></img><img class="svg" src="/assets/svg/star.svg"></img><img class="svg" src="/assets/svg/star.svg"></img>
-                                                {{ else if eq .level "intermediate" }}
-                                                <img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star.svg"></img><img class="svg" src="/assets/svg/star.svg"></img>
-                                                {{ else if eq .level "advanced" }}
-                                                <img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star.svg"></img>
-                                                {{ else if eq .level "expert" }}
-                                                <img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star-solid.svg"></img><img class="svg" src="/assets/svg/star-solid.svg"></img>
+                                            <span style="float:right" title="{{ .level }}">
+                                                {{ if eq .level "Novice" }}
+                                                <img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img>
+                                                {{ else if eq .level "Intermediate" }}
+                                                <img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img>
+                                                {{ else if eq .level "Advanced" }}
+                                                <img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img>
+                                                {{ else if eq .level "Expert" }}
+                                                <img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img><img class="svg" src="/assets/svg/star-solid.svg" alt="Solid star"></img>
                                                 {{ else }}
-                                                <img class="svg" src="/assets/svg/star.svg"></img><img class="svg" src="/assets/svg/star.svg"></img><img class="svg" src="/assets/svg/star.svg"></img><img class="svg" src="/assets/svg/star.svg"></img>
+                                                <img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img><img class="svg" src="/assets/svg/star.svg" alt="Empty star"></img>
                                                 {{ end }}
                                             </span>
                                         </li>

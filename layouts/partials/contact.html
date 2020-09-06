@@ -8,9 +8,9 @@
                         <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
                             <ul class="list-unstyled mb-0">
                                 {{ range .Site.Params.contact.list }}
-                                <li class="mb-2"><img src="{{ .icon }}" class="mr-2 svg"></img><a class="resume-link" href="{{ .url | safeURL }}">{{ .text }}</a></li>
+                                <li class="mb-2"><img src="{{ .icon }}" class="mr-2 svg" alt="{{ .alt }}"></img><a class="resume-link" href="{{ .url | safeURL }}">{{ .text }}</a></li>
                                 {{ end }}
-                                <li class="mb-2"><img src="/assets/svg/map-marked-alt.svg" class="mr-2 svg"></i>{{ .Site.Params.contact.location }}</li>
+                                <li class="mb-2"><img src="/assets/svg/map-marked-alt.svg" class="mr-2 svg" alt="Location"></i>{{ .Site.Params.contact.location }}</li>
                                 <li class="mb-2 language-spacer"><br/></li>
                                 <li class="mb-2">
                                     <div class="languages" tabindex="0" aria-haspopup="true">
